@@ -335,19 +335,19 @@ export const FEATURED_DISHES = [
   {
     name: 'Mutton Chops',
     description: 'Tender mutton chops marinated and grilled',
-    image: '/images/mutton-chops.jpg',
+    image: '/images/Mutton Chops.jpg',
     price: 295,
   },
   {
     name: 'Chicken Lollipop',
     description: 'Crispy and spicy chicken lollipops',
-    image: '/images/chicken-lollipop.jpg',
+    image: '/images/Chicken Lollipop.jpg',
     price: 220,
   },
   {
     name: 'Nalli Fry',
     description: 'Bone marrow fry - a special delicacy',
-    image: '/images/nalli-fry.jpg',
+    image: '/images/Nalli Fry.jpg',
     price: 360,
   },
   {
@@ -359,7 +359,7 @@ export const FEATURED_DISHES = [
   {
     name: 'Naati Koli Fry',
     description: 'Traditional country chicken fried',
-    image: '/images/naati-koli.jpg',
+    image: '/images/Naati Koli Fry.jpg',
     price: 285,
   },
 ]
