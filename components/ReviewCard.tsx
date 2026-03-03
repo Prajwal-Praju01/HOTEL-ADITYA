@@ -26,35 +26,36 @@ export default function ReviewCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      className="card p-6 h-full flex flex-col"
+      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 h-full flex flex-col"
     >
-      {/* Header */}
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-1">
-            <h4 className="font-semibold text-charcoal text-lg">{author}</h4>
-            {isLocalGuide && (
-              <BadgeCheck size={18} className="text-primary" aria-label="Local Guide" />
-            )}
-          </div>
-          <p className="text-sm text-charcoal-light">{date}</p>
-        </div>
-      </div>
-
-      {/* Rating */}
+      {/* Rating Stars - Moved to top for better visual hierarchy */}
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            size={18}
+            size={20}
             fill={i < rating ? '#FFD700' : 'none'}
             stroke={i < rating ? '#FFD700' : '#D1D5DB'}
+            className="transition-all"
           />
         ))}
       </div>
 
       {/* Review Text */}
-      <p className="text-charcoal-light leading-relaxed flex-1">{text}</p>
+      <p className="text-charcoal text-base leading-relaxed mb-6 flex-1">{text}</p>
+
+      {/* Author Info - Moved to bottom */}
+      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div>
+          <div className="flex items-center gap-2">
+            <h4 className="font-semibold text-charcoal">{author}</h4>
+            {isLocalGuide && (
+              <BadgeCheck size={16} className="text-primary" aria-label="Local Guide" />
+            )}
+          </div>
+          <p className="text-xs text-charcoal-light mt-1">{date}</p>
+        </div>
+      </div>
     </motion.div>
   )
 }

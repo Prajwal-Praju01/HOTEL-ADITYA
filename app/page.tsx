@@ -110,11 +110,26 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {FEATURED_REVIEWS.map((review, index) => (
               <ReviewCard key={review.author} {...review} delay={index * 0.1} />
             ))}
           </div>
+
+          {/* View All Reviews Link */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <a
+              href="/reviews"
+              className="inline-block bg-white hover:bg-primary hover:text-white text-charcoal font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl border-2 border-transparent hover:border-primary"
+            >
+              Read All Reviews →
+            </a>
+          </motion.div>
         </div>
       </section>
 
